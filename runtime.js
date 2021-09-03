@@ -109,3 +109,42 @@ console.log("append", resultsAppend.preciseWords);
 console.log('Results for the tinyArray');
 console.log("insert", resultsInsert.preciseWords);
 console.log("append", resultsAppend.preciseWords);
+
+
+function hasUniqueChars(str){
+    for(let i=0; i< str.length; i++){
+        for(let j = i +1; j < str.length; j++){
+            if(str[i] == str[j]){
+                return false
+                // return console.log(`The string: "${str}"  does not contain all unique characters`);
+            }
+        }
+    }
+    return true
+    // return console.log(`The string:  "${str}"  has all unique characters`);
+
+}
+
+
+hasUniqueChars("Jaxon")
+hasUniqueChars("Alyssa")
+ 
+
+perf.start()
+hasUniqueChars("Jaxon")
+let resultsTrue = perf.stop()
+
+perf.start()
+hasUniqueChars("Alyssa")
+let resultsFalse = perf.stop()
+
+console.log('Results for true')
+console.log('true', resultsTrue.preciseWords)
+console.log('Results for false')
+console.log('false', resultsFalse.preciseWords)
+
+
+// Results for true
+// true 5.28 μs
+// Results for false
+// false 3.971 μs
